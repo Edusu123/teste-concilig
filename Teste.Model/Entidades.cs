@@ -48,5 +48,55 @@ namespace Teste.Model.Entidades {
                 }
             }
         }
+        public class Clientes {
+            private Int64 id_cliente;
+            private string nome_cliente;
+            private string cpf_cliente;
+            private string arquivo_cliente;
+            private Funcionarios funcionario_cliente;
+
+            public Int64 Id_cliente {
+                get {
+                    return id_cliente;
+                }
+                set {
+                    id_cliente = value;
+                }
+            }
+
+            public string Nome_cliente {
+                get {
+                    return nome_cliente;
+                }
+                set {
+                    nome_cliente = value;
+                }
+            }
+
+            public string Cpf_cliente {
+                get {
+                    return cpf_cliente;
+                }
+                set {
+                    cpf_cliente = value;
+                }
+            }
+            public string Arquivo_cliente {
+                get {
+                    return arquivo_cliente;
+                }
+                set {
+                    arquivo_cliente = value;
+                }
+            }
+            public Funcionarios Funcionario_cliente {
+                get {
+                    return funcionario_cliente;
+                }
+                set {
+                    funcionario_cliente = value;
+                }
+            }
+        }
     }
 }
