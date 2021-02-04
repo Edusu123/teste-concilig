@@ -33,5 +33,34 @@ namespace Teste.Model.Suporte {
             cn.Dispose(); // libera os recursos utilizados
             cn = null;
         }
+
+        //Select simples retornando um DataReader
+        public static NpgsqlDataReader selecionar(string sql) {
+            try {
+                conectar();
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, cn);
+                return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (NpgsqlException ex) {
+                desconectar();
+                throw new ApplicationException(ex.Message);
+            }
+        }
+
+        //Executa uma query no banco de dados. (Sem retorno)
+        // insert - update - delete
+        public static void executar(string sql) {
+            try {
+                conectar();
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (NpgsqlException ex) {
+                throw new ApplicationException(ex.Message);
+            }
+            finally {
+                desconectar();
+            }
+        }
     }
 }
