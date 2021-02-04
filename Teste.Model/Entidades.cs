@@ -25,7 +25,12 @@ namespace Teste.Model.Entidades {
                     return login_funcionario;
                 }
                 set {
-                    login_funcionario = value; //fazer verificação de tamanho de nome de usuário
+                    if(value.Length <= 3) {
+                        throw new ApplicationException("O tamanho do nome de usuário não deve ser menor do que 3;");
+                    }
+                    else {
+                        login_funcionario = value;
+                    }
                 }
             }
 
@@ -34,7 +39,12 @@ namespace Teste.Model.Entidades {
                     return senha_funcionario;
                 }
                 set {
-                    senha_funcionario = value; //fazer verificação de tamanho de senha
+                    if(value.Length <= 8) {
+                        throw new ApplicationException("O tamanho da senha não deve ser menor do que 8;");
+                    }
+                    else {
+                        senha_funcionario = value;
+                    }
                 }
             }
         }
