@@ -54,5 +54,45 @@ namespace Teste.Model {
             sql = "INSERT INTO contratos(id_contrato, num_contrato, cliente_contrato, produto_contrato, vencimento_contrato, valor_contrato, arquivo_contrato, funcionario_contrato, data_contrato) VALUES(" + contrato.Id_contrato + ", '" + contrato.Num_contrato + "', " + contrato.Cliente_contrato.Id_cliente + ", '" + contrato.Produto_contrato + "', " + contrato.Vencimento_contrato + ", " + contrato.Valor_contrato + ", '" + contrato.Arquivo_contrato + "', " + contrato.Funcionario_contrato.Id_funcionario + ", " + contrato.Data_contrato + ")";
             ConexaoBanco.executar(sql);
         }
+        public static List<Funcionarios> Login(string nome, string senha) { // método utilizado para realizar o login
+            List<Funcionarios> funcs = new List<Funcionarios>();
+            string sql = "SELECT login_funcionario FROM funcionarios WHERE login_funcionario = '" + nome + "' and senha_funcionario = '" + senha + "'";
+            NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
+            while (dtr.Read()) {
+                funcs.Add(objFuncionario(ref dtr));
+            }
+            dtr.Close();
+            return funcs;
+        }
+        public static List<Funcionarios> BuscarFuncionario(string nome) { // busca os fabricantes com base no nome de usuário
+            List<Funcionarios> funcs = new List<Funcionarios>();
+            string sql = "SELECT * FROM funcionario WHERE login_funcionario = '" + nome + "'";
+            NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
+            while(dtr.Read()) {
+                funcs.Add(objFuncionario(ref dtr));
+            }
+            dtr.Close();
+            return funcs;
+        }
+        public static List<Contratos> BuscarContrato() { // busca todos os contratos
+            List<Contratos> contratos = new List<Contratos>();
+            string sql = "SELECT * FROM contratos INNER JOIN clientes ON contrato.cliente_contrato = cliente.id_cliente ORDER BY data_contrato";
+            NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
+            while (dtr.Read()) {
+                contratos.Add(objContrato(ref dtr));
+            }
+            dtr.Close();
+            return contratos;
+        }
+        public static List<Contratos> BuscarContrato(string num_contrato) {
+            List<Contratos> contratos = new List<Contratos>();
+            string sql = "SELECT * FROM contratos WHERE num_contrato = '" + num_contrato + "'";
+            NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
+            while (dtr.Read()) {
+                contratos.Add(objContrato(ref dtr));
+            }
+            dtr.Close();
+            return contratos;
+        }
     }
 }
