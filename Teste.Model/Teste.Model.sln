@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste.Model", "Teste.Model.csproj", "{CE9A975C-E55F-4402-AD54-CE7C5E3320D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteForms.Desktop", "..\TesteForms\TesteForms.Desktop.csproj", "{8BFD9CC7-8965-4164-9BAF-544DDC68212B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE9A975C-E55F-4402-AD54-CE7C5E3320D9} = {CE9A975C-E55F-4402-AD54-CE7C5E3320D9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{CE9A975C-E55F-4402-AD54-CE7C5E3320D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE9A975C-E55F-4402-AD54-CE7C5E3320D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE9A975C-E55F-4402-AD54-CE7C5E3320D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BFD9CC7-8965-4164-9BAF-544DDC68212B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BFD9CC7-8965-4164-9BAF-544DDC68212B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BFD9CC7-8965-4164-9BAF-544DDC68212B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BFD9CC7-8965-4164-9BAF-544DDC68212B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
