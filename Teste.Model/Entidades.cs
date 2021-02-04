@@ -118,12 +118,12 @@ namespace Teste.Model.Entidades {
 
             public Funcionarios Funcionario_contrato {
                 get { return funcionario_contrato; }
-                set { funcionario_contrato = value}
+                set { funcionario_contrato = value; }
             }
 
             public DateTime Data_contrato { // data de inserção no banco de dados
                 get { return data_contrato; }
-                set { data_contrato = value}
+                set { data_contrato = value;  }
             }
 
         }
