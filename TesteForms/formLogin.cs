@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TesteForms.Desktop;
 
 namespace TesteForms {
     public partial class frmLogin : Form {
@@ -20,7 +21,7 @@ namespace TesteForms {
         }
 
         private void btnCadastro_Click(object sender, EventArgs e) {
-
+            new frmCadastro().Show();
         }
     }
 }

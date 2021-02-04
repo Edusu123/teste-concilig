@@ -8,7 +8,7 @@ using Teste.Model.Entidades;
 using Teste.Model.Suporte;
 
 namespace Teste.Model {
-    class Servico {
+    public class Servico {
         // Métodos de criação de objetos para manipulação dos dados:
         public static Funcionarios objFuncionario(ref NpgsqlDataReader dtr) {
             Funcionarios func = new Funcionarios();
