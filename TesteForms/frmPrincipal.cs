@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Teste.Model;
+using Teste.Model.Entidades;
 
 namespace TesteForms {
     public partial class frmPrincipal : Form {
-        public frmPrincipal() {
+        public frmPrincipal(Funcionarios func) {
             InitializeComponent();
         }
 

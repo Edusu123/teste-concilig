@@ -56,7 +56,7 @@ namespace Teste.Model {
         }
         public static List<Funcionarios> Login(string nome, string senha) { // método utilizado para realizar o login
             List<Funcionarios> funcs = new List<Funcionarios>();
-            string sql = "SELECT login_funcionario FROM funcionarios WHERE login_funcionario = '" + nome + "' and senha_funcionario = '" + senha + "'";
+            string sql = "SELECT * FROM funcionarios WHERE login_funcionario = '" + nome + "' and senha_funcionario = '" + senha + "'";
             NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
             while (dtr.Read()) {
                 funcs.Add(objFuncionario(ref dtr));
