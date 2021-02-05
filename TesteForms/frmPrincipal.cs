@@ -82,5 +82,13 @@ namespace TesteForms {
             func = lista[0];
             new frmContratoLocal(nome, cpf, num_contrato, produto, vencimento, valor, func).Show();
         }
+
+        private void frmPrincipal_Activated(object sender, EventArgs e) {
+            lstContratosDatabase.Items.Clear();
+            contratos = Servico.BuscarContrato();
+            foreach (Contratos contrato in contratos) {
+                lstContratosDatabase.Items.Add(contrato.toString());
+            }
+        }
     }
 }

@@ -126,7 +126,7 @@ namespace Teste.Model.Entidades {
         }
 
         public String toString() {
-            return num_contrato +  ", " + vencimento_contrato + ", R$" + valor_contrato + ", " + produto_contrato;
+            return num_contrato +  ", " + vencimento_contrato.ToShortDateString() + ", R$" + valor_contrato + ", " + produto_contrato;
         }
 
     }

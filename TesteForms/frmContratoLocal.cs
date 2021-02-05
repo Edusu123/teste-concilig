@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Teste.Model;
 using Teste.Model.Entidades;
+using System.Globalization;
 
 namespace TesteForms.Desktop {
     public partial class frmContratoLocal : Form {
@@ -35,14 +36,16 @@ namespace TesteForms.Desktop {
                 contrato.Cliente_contrato = cliente;
                 contrato.Produto_contrato = lblProdutoInsert.Text;
                 contrato.Vencimento_contrato = Convert.ToDateTime(lblVencimentoInsert.Text);
-                contrato.Valor_contrato = Convert.ToDouble(lblValorInsert.Text.Replace(",", "."));
+                //double valor = Convert.ToDouble(lblValorInsert.Text.Replace(",", "."));
+                double valor = double.Parse(lblValorInsert.Text.Replace(",", "."), CultureInfo.InvariantCulture);
+                contrato.Valor_contrato = valor;
                 Funcionarios func = new Funcionarios();
                 List<Funcionarios> listaf = new List<Funcionarios>();
                 listaf = Servico.BuscarFuncionario(lblFuncionatioInsert.Text);
                 func = listaf[0];
                 contrato.Funcionario_contrato = func;
                 contrato.Data_contrato = DateTime.Now;
-                Servico.Salvar(contrato);
+                Servico.Salvar(contrato, valor);
             }
             else {
                 Clientes cliente = new Clientes();
@@ -60,11 +63,15 @@ namespace TesteForms.Desktop {
                 contrato.Cliente_contrato = cliente;
                 contrato.Produto_contrato = lblProdutoInsert.Text;
                 contrato.Vencimento_contrato = Convert.ToDateTime(lblVencimentoInsert.Text);
-                contrato.Valor_contrato = Convert.ToDouble(lblValorInsert.Text.Replace(",", "."));
+                //double valor = (lblValorInsert.Text.Replace(",", "."));
+                double valor = double.Parse(lblValorInsert.Text, CultureInfo.InvariantCulture);
+                contrato.Valor_contrato = valor;
                 contrato.Funcionario_contrato = func;
                 contrato.Data_contrato = DateTime.Now;
-                Servico.Salvar(contrato);
+                Servico.Salvar(contrato, valor);
             }
+            MessageBox.Show("Contrato exportado com sucesso!");
+            this.Close();
         }
     }
 }

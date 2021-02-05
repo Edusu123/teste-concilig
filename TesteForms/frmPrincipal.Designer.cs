@@ -149,6 +149,7 @@ namespace TesteForms {
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teste - Concilig";
+            this.Activated += new System.EventHandler(this.frmPrincipal_Activated);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.grpContratosLocal.ResumeLayout(false);
             this.grpContratosLocal.PerformLayout();

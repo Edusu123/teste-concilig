@@ -47,9 +47,9 @@ namespace Teste.Model {
             sql = "INSERT INTO clientes(nome_cliente, cpf_cliente, funcionario_cliente) VALUES(" + "'" + cliente.Nome_cliente + "', '" + cliente.Cpf_cliente + "', " + cliente.Funcionario_cliente.Id_funcionario + ")";
             ConexaoBanco.executar(sql);
         }
-        public static void Salvar(Contratos contrato) {
+        public static void Salvar(Contratos contrato, double valor) {
             string sql;
-            sql = "INSERT INTO contratos(num_contrato, cliente_contrato, produto_contrato, vencimento_contrato, valor_contrato, funcionario_contrato, data_contrato) VALUES(" + "'" + contrato.Num_contrato + "', " + contrato.Cliente_contrato.Id_cliente + ", '" + contrato.Produto_contrato + "', '" + contrato.Vencimento_contrato.ToShortDateString() + "', " + contrato.Valor_contrato + ", " + contrato.Funcionario_contrato.Id_funcionario + ", '" + contrato.Data_contrato.ToShortDateString() + "')";
+            sql = "INSERT INTO contratos(num_contrato, cliente_contrato, produto_contrato, vencimento_contrato, valor_contrato, funcionario_contrato, data_contrato) VALUES(" + "'" + contrato.Num_contrato + "', " + contrato.Cliente_contrato.Id_cliente + ", '" + contrato.Produto_contrato + "', '" + contrato.Vencimento_contrato.ToShortDateString() + "', " + valor.ToString().Replace(",", ".") + ", " + contrato.Funcionario_contrato.Id_funcionario + ", '" + contrato.Data_contrato.ToShortDateString() + "')";
             ConexaoBanco.executar(sql);
         }
         public static List<Funcionarios> Login(string nome, string senha) { // método utilizado para realizar o login
@@ -84,7 +84,7 @@ namespace Teste.Model {
         }
         public static List<Contratos> BuscarContrato(string num_contrato) {
             List<Contratos> contratos = new List<Contratos>();
-            string sql = "SELECT * FROM contratos WHERE num_contrato = '" + num_contrato + "'";
+            string sql = "SELECT * FROM contratos INNER JOIN funcionarios ON contratos.funcionario_contrato = funcionarios.id_funcionario WHERE num_contrato = '" + num_contrato + "'";
             NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
             while (dtr.Read()) {
                 contratos.Add(objContrato(ref dtr));
@@ -94,7 +94,7 @@ namespace Teste.Model {
         }
         public static List<Clientes> BuscarClientes(string cpf) { // busca clientes com base no CPF
             List<Clientes> clientes = new List<Clientes>();
-            string sql = "SELECT * FROM clientes WHERE cpf_cliente = '" + cpf + "'";
+            string sql = "SELECT * FROM clientes INNER JOIN funcionarios ON clientes.funcionario_cliente = funcionarios.id_funcionario WHERE cpf_cliente = '" + cpf + "'";
             NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
             while (dtr.Read()) {
                 clientes.Add(objCliente(ref dtr));
