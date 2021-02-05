@@ -205,7 +205,7 @@ namespace TesteForms.Desktop {
             this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmContratoLocal";
-            this.Text = "frmContratoLocal";
+            this.Text = "Contrato Local";
             this.ResumeLayout(false);
             this.PerformLayout();
 

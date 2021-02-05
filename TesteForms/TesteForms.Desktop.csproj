@@ -73,6 +73,12 @@
     <Compile Include="formLogin.Designer.cs">
       <DependentUpon>formLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmContratoDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmContratoDatabase.Designer.cs">
+      <DependentUpon>frmContratoDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmContratoLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmContratoDatabase.resx">
+      <DependentUpon>frmContratoDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmContratoLocal.resx">
       <DependentUpon>frmContratoLocal.cs</DependentUpon>

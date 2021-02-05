@@ -43,7 +43,6 @@ namespace Teste.Model.Entidades {
         private Int64 id_cliente;
         private string nome_cliente;
         private string cpf_cliente;
-        private string arquivo_cliente;
         private Funcionarios funcionario_cliente;
 
         public Int64 Id_cliente {
@@ -60,10 +59,6 @@ namespace Teste.Model.Entidades {
             get { return cpf_cliente; }
             set { cpf_cliente = value; }
         }
-        public string Arquivo_cliente {
-            get { return arquivo_cliente; }
-            set { arquivo_cliente = value; }
-        }
         public Funcionarios Funcionario_cliente {
             get { return funcionario_cliente; }
             set { funcionario_cliente = value; }
@@ -76,7 +71,6 @@ namespace Teste.Model.Entidades {
         private string produto_contrato;
         private DateTime vencimento_contrato; //não esquecer de tratar o dado antes de enviar para o banco
         private double valor_contrato;
-        private string arquivo_contrato;
         private Funcionarios funcionario_contrato;
         private DateTime data_contrato; //data de inserção no banco de dados
 
@@ -108,11 +102,6 @@ namespace Teste.Model.Entidades {
         public double Valor_contrato {
             get { return valor_contrato; }
             set { valor_contrato = value; }
-        }
-
-        public string Arquivo_contrato {
-            get { return arquivo_contrato; }
-            set { arquivo_contrato = value; }
         }
 
         public Funcionarios Funcionario_contrato {

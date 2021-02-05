@@ -34,6 +34,7 @@ namespace TesteForms {
             this.btnSelecionarLocal = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpContratosLocal.SuspendLayout();
             this.grpDatabase.SuspendLayout();
             this.SuspendLayout();
@@ -135,11 +136,22 @@ namespace TesteForms {
             this.lblNome.Size = new System.Drawing.Size(0, 20);
             this.lblNome.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(408, 487);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Selecionar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 526);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnSelecionarLocal);
@@ -172,6 +184,7 @@ namespace TesteForms {
         private System.Windows.Forms.Button btnSelecionarLocal;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Button button1;
     }
 }
 

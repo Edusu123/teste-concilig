@@ -90,5 +90,15 @@ namespace TesteForms {
                 lstContratosDatabase.Items.Add(contrato.toString());
             }
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            string itens = lstContratosDatabase.SelectedItem.ToString();
+            string num_contrato = itens.Split(',')[0];
+            Contratos contrato = new Contratos();
+            List<Contratos> lista = new List<Contratos>();
+            lista = Servico.BuscarContrato(num_contrato);
+            contrato = lista[0];
+            new frmContratoDatabase(contrato).Show();
+        }
     }
 }

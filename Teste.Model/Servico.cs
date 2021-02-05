@@ -84,7 +84,7 @@ namespace Teste.Model {
         }
         public static List<Contratos> BuscarContrato(string num_contrato) {
             List<Contratos> contratos = new List<Contratos>();
-            string sql = "SELECT * FROM contratos INNER JOIN funcionarios ON contratos.funcionario_contrato = funcionarios.id_funcionario WHERE num_contrato = '" + num_contrato + "'";
+            string sql = "SELECT * FROM contratos INNER JOIN funcionarios ON contratos.funcionario_contrato = funcionarios.id_funcionario INNER JOIN clientes ON contratos.cliente_contrato = clientes.id_cliente WHERE num_contrato = '" + num_contrato + "'";
             NpgsqlDataReader dtr = ConexaoBanco.selecionar(sql);
             while (dtr.Read()) {
                 contratos.Add(objContrato(ref dtr));

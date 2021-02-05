@@ -124,7 +124,7 @@ namespace TesteForms {
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
