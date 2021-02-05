@@ -34,7 +34,8 @@ namespace TesteForms {
             this.btnSelecionarLocal = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelecionarDatabase = new System.Windows.Forms.Button();
+            this.btnHistorico = new System.Windows.Forms.Button();
             this.grpContratosLocal.SuspendLayout();
             this.grpDatabase.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +126,7 @@ namespace TesteForms {
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(72, 20);
             this.lblUsuario.TabIndex = 6;
-            this.lblUsuario.Text = "Usuario: ";
+            this.lblUsuario.Text = "Usuário: ";
             // 
             // lblNome
             // 
@@ -136,22 +137,33 @@ namespace TesteForms {
             this.lblNome.Size = new System.Drawing.Size(0, 20);
             this.lblNome.TabIndex = 7;
             // 
-            // button1
+            // btnSelecionarDatabase
             // 
-            this.button1.Location = new System.Drawing.Point(408, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Selecionar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSelecionarDatabase.Location = new System.Drawing.Point(408, 487);
+            this.btnSelecionarDatabase.Name = "btnSelecionarDatabase";
+            this.btnSelecionarDatabase.Size = new System.Drawing.Size(75, 23);
+            this.btnSelecionarDatabase.TabIndex = 8;
+            this.btnSelecionarDatabase.Text = "Selecionar";
+            this.btnSelecionarDatabase.UseVisualStyleBackColor = true;
+            this.btnSelecionarDatabase.Click += new System.EventHandler(this.btnSelecionarDatabase_Click_1);
+            // 
+            // btnHistorico
+            // 
+            this.btnHistorico.Location = new System.Drawing.Point(722, 9);
+            this.btnHistorico.Name = "btnHistorico";
+            this.btnHistorico.Size = new System.Drawing.Size(75, 23);
+            this.btnHistorico.TabIndex = 9;
+            this.btnHistorico.Text = "Histórico";
+            this.btnHistorico.UseVisualStyleBackColor = true;
+            this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 526);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHistorico);
+            this.Controls.Add(this.btnSelecionarDatabase);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnSelecionarLocal);
@@ -184,7 +196,8 @@ namespace TesteForms {
         private System.Windows.Forms.Button btnSelecionarLocal;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSelecionarDatabase;
+        private System.Windows.Forms.Button btnHistorico;
     }
 }
 

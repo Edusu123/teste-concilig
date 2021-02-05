@@ -91,7 +91,7 @@ namespace TesteForms {
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnSelecionarDatabase_Click_1(object sender, EventArgs e) {
             string itens = lstContratosDatabase.SelectedItem.ToString();
             string num_contrato = itens.Split(',')[0];
             Contratos contrato = new Contratos();
@@ -99,6 +99,10 @@ namespace TesteForms {
             lista = Servico.BuscarContrato(num_contrato);
             contrato = lista[0];
             new frmContratoDatabase(contrato).Show();
+        }
+
+        private void btnHistorico_Click(object sender, EventArgs e) {
+            new frmHistorico().Show();
         }
     }
 }

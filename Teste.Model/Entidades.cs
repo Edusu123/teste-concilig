@@ -118,5 +118,9 @@ namespace Teste.Model.Entidades {
             return num_contrato +  ", " + vencimento_contrato.ToShortDateString() + ", R$" + valor_contrato + ", " + produto_contrato;
         }
 
+        public String toStringHistorico() {
+            return data_contrato.ToShortDateString() + " | "  + funcionario_contrato.Login_funcionario + " | R$" + valor_contrato.ToString()  + " | " + cliente_contrato.Nome_cliente + " | " + vencimento_contrato.ToShortDateString() + " | " + produto_contrato;
+        }
+
     }
 }
