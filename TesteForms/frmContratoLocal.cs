@@ -58,6 +58,9 @@ namespace TesteForms.Desktop {
                 cliente.Funcionario_cliente = func;
                 Servico.Salvar(cliente);
                 ///////////////////////////////////////////////////////
+                List<Clientes> listac = new List<Clientes>();
+                listac = Servico.BuscarClientes(cliente.Cpf_cliente);
+                cliente = listac[0];
                 Contratos contrato = new Contratos();
                 contrato.Num_contrato = lblNumero.Text;
                 contrato.Cliente_contrato = cliente;
