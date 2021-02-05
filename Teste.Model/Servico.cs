@@ -39,12 +39,12 @@ namespace Teste.Model {
         }
         public static void Salvar(Funcionarios func) {
             string sql;
-            sql = "INSERT INTO funcionarios(id_funcionario, login_funcionario, senha_funcionario) VALUES(" + func.Id_funcionario + ", '" + func.Login_funcionario + "', '" + func.Senha_funcionario + "')";
+            sql = "INSERT INTO funcionarios(login_funcionario, senha_funcionario) VALUES('" + func.Login_funcionario + "', '" + func.Senha_funcionario + "')";
             ConexaoBanco.executar(sql);
         }
         public static void Salvar(Clientes cliente) {
             string sql;
-            sql = "INSERT INTO clientes(nome_cliente, cpf_cliente, funcionario_cliente) VALUES(" + "'" + cliente.Nome_cliente + "', '" + cliente.Cpf_cliente + "', " + cliente.Funcionario_cliente.Id_funcionario + ")";
+            sql = "INSERT INTO clientes(nome_cliente, cpf_cliente, funcionario_cliente) VALUES('" + cliente.Nome_cliente + "', '" + cliente.Cpf_cliente + "', " + cliente.Funcionario_cliente.Id_funcionario + ")";
             ConexaoBanco.executar(sql);
         }
         public static void Salvar(Contratos contrato, double valor) {
