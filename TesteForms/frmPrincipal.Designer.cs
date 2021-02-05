@@ -27,11 +27,13 @@ namespace TesteForms {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblContratosLocal = new System.Windows.Forms.Label();
             this.grpContratosLocal = new System.Windows.Forms.GroupBox();
-            this.grpDatabase = new System.Windows.Forms.GroupBox();
-            this.lblContratosDatabase = new System.Windows.Forms.Label();
-            this.lstContratosDatabase = new System.Windows.Forms.ListBox();
             this.lstContratosLocal = new System.Windows.Forms.ListBox();
+            this.grpDatabase = new System.Windows.Forms.GroupBox();
+            this.lstContratosDatabase = new System.Windows.Forms.ListBox();
+            this.lblContratosDatabase = new System.Windows.Forms.Label();
             this.btnSelecionarLocal = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.grpContratosLocal.SuspendLayout();
             this.grpDatabase.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +69,14 @@ namespace TesteForms {
             this.grpContratosLocal.TabStop = false;
             this.grpContratosLocal.Text = "Arquivos .CSV";
             // 
+            // lstContratosLocal
+            // 
+            this.lstContratosLocal.FormattingEnabled = true;
+            this.lstContratosLocal.Location = new System.Drawing.Point(12, 51);
+            this.lstContratosLocal.Name = "lstContratosLocal";
+            this.lstContratosLocal.Size = new System.Drawing.Size(351, 342);
+            this.lstContratosLocal.TabIndex = 2;
+            // 
             // grpDatabase
             // 
             this.grpDatabase.Controls.Add(this.lstContratosDatabase);
@@ -78,6 +88,14 @@ namespace TesteForms {
             this.grpDatabase.TabStop = false;
             this.grpDatabase.Text = "PostgreSQL";
             // 
+            // lstContratosDatabase
+            // 
+            this.lstContratosDatabase.FormattingEnabled = true;
+            this.lstContratosDatabase.Location = new System.Drawing.Point(12, 51);
+            this.lstContratosDatabase.Name = "lstContratosDatabase";
+            this.lstContratosDatabase.Size = new System.Drawing.Size(351, 342);
+            this.lstContratosDatabase.TabIndex = 3;
+            // 
             // lblContratosDatabase
             // 
             this.lblContratosDatabase.AutoSize = true;
@@ -87,22 +105,6 @@ namespace TesteForms {
             this.lblContratosDatabase.Size = new System.Drawing.Size(260, 31);
             this.lblContratosDatabase.TabIndex = 2;
             this.lblContratosDatabase.Text = "Contratos: database";
-            // 
-            // lstContratosDatabase
-            // 
-            this.lstContratosDatabase.FormattingEnabled = true;
-            this.lstContratosDatabase.Location = new System.Drawing.Point(12, 51);
-            this.lstContratosDatabase.Name = "lstContratosDatabase";
-            this.lstContratosDatabase.Size = new System.Drawing.Size(351, 342);
-            this.lstContratosDatabase.TabIndex = 3;
-            // 
-            // lstContratosLocal
-            // 
-            this.lstContratosLocal.FormattingEnabled = true;
-            this.lstContratosLocal.Location = new System.Drawing.Point(12, 51);
-            this.lstContratosLocal.Name = "lstContratosLocal";
-            this.lstContratosLocal.Size = new System.Drawing.Size(351, 342);
-            this.lstContratosLocal.TabIndex = 2;
             // 
             // btnSelecionarLocal
             // 
@@ -114,11 +116,32 @@ namespace TesteForms {
             this.btnSelecionarLocal.UseVisualStyleBackColor = true;
             this.btnSelecionarLocal.Click += new System.EventHandler(this.btnSelecionarLocal_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(414, 9);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(72, 20);
+            this.lblUsuario.TabIndex = 6;
+            this.lblUsuario.Text = "Usuario: ";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(492, 9);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(0, 20);
+            this.lblNome.TabIndex = 7;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 526);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnSelecionarLocal);
             this.Controls.Add(this.grpDatabase);
             this.Controls.Add(this.grpContratosLocal);
@@ -146,6 +169,8 @@ namespace TesteForms {
         private System.Windows.Forms.ListBox lstContratosDatabase;
         private System.Windows.Forms.ListBox lstContratosLocal;
         private System.Windows.Forms.Button btnSelecionarLocal;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblNome;
     }
 }
 

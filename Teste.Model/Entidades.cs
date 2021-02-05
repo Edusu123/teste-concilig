@@ -125,5 +125,9 @@ namespace Teste.Model.Entidades {
             set { data_contrato = value; }
         }
 
+        public String toString() {
+            return num_contrato +  ", " + vencimento_contrato + ", R$" + valor_contrato + ", " + produto_contrato;
+        }
+
     }
 }
