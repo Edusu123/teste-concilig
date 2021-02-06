@@ -1,0 +1,28 @@
+CREATE TABLE Funcionarios(
+	id_funcionario SERIAL NOT NULL,
+	login_funcionario varchar(50) NOT NULL,
+	senha_funcionario varchar(50) NOT NULL,
+	PRIMARY KEY (id_funcionario)
+);
+
+CREATE TABLE Clientes(
+	id_cliente SERIAL NOT NULL,
+	nome_cliente varchar(50) NOT NULL,
+	cpf_cliente varchar(11) NOT NULL,
+	arquivo_cliente varchar(50) NOT NULL,
+	funcionario_cliente int NOT NULL REFERENCES Funcionarios (id_funcionario),
+	PRIMARY KEY (id_cliente)
+);
+
+CREATE TABLE Contratos(
+	id_contrato SERIAL NOT NULL,
+	num_contrato varchar(4) NOT NULL,
+	cliente_contrato int NOT NULL REFERENCES Clientes (id_cliente),
+	produto_contrato varchar(50) NOT NULL,
+	vencimento_contrato DATE NOT NULL,
+	valor_contrato float NOT NULL,
+	arquivo_contrato varchar(50) NOT NULL,
+	funcionario_contrato int NOT NULL REFERENCES Funcionarios(id_funcionario),
+	data_contrato timestamp NOT NULL,
+	PRIMARY KEY (id_contrato)
+);
